@@ -35,8 +35,8 @@ int main(void) {
 		/* En este caso, rellenamos un vector de longitud determinada por consola*/
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorE(vectorE,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
 		mostrar_vectorE(vectorE,longitud);
 
 	break;
@@ -47,8 +47,8 @@ int main(void) {
 		 *  por consola, en el vector*/
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorE(vectorE,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
 		puts("Ingresa el valor para mostrar los menores existentes en el vector\n");
 		mostrar_menor(vectorE,longitud,lim); /*Función principal del caso*/
 
@@ -59,8 +59,8 @@ int main(void) {
 	/*En este caso, muestra los elementos del vector comprendidos entre el intervalo seleccionado*/
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorF(vectorF,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorF(vectorF,longitud);
 		puts("Ingresa el límite inferior\n");
 		fflush(stdout);
 		scanf("%f",&low);
@@ -76,8 +76,8 @@ int main(void) {
 		/*En este caso, rotamos el primer elemento del vector al final del mismo*/
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorE(vectorE,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
 		puts("Vector original\n");
 		mostrar_vectorE(vectorE,longitud);  /*Vector original*/
 		rotar_izq_vector(vectorE,longitud); /*Función principal del caso*/
@@ -91,8 +91,8 @@ int main(void) {
 		/*En este caso, rotamos el último elemento al principio del vector */
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorE(vectorE,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
 		puts("Vector original\n");
 		mostrar_vectorE(vectorE,longitud);  /*Vector original*/
 		rotar_der_vector(vectorE,longitud); /*Función principal del caso*/
@@ -107,8 +107,8 @@ int main(void) {
 		 *  a partir de él, el resto de elementos del vector*/
 
 		puts("Rellena un vector con la longitud deseada\n");
-		longitud = longitud_Vector(TAM);
-		pedir_VectorE(vectorE,longitud);
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
 		puts("Elige el valor \"bandera\" para mostrar los elementos correspondientes\n");
 		fflush(stdout);
 		scanf("%d",&marca);
