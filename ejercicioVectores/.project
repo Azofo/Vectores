@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>vectores</project>
-		<project>ejercicioVectores</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
