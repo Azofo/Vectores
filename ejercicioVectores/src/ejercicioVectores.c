@@ -10,16 +10,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "vectores.h"
 #define TAM 30
 
 int main(void) {
 
-	int longitud,lim,elige,marca;
+	int longitud,longitud2,lim,elige,marca;
 	float low,high;
 	int vectorE [TAM];
+	int vectorE2 [TAM];
 	float vectorF[TAM];
 	float vectorF2 [TAM];
+	int vectorDoble[60];
 
 	do{
 
@@ -121,21 +124,84 @@ int main(void) {
 
 	case 7:
 
+		/*En este caso, vamos a comparar dos vectores de reales para saber si son proporcionales*/
+
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		//generarF(vectorF,longitud);
-		//generarF(vectorF2,longitud);
 		pedir_vectorF(vectorF,longitud);
 		pedir_vectorF(vectorF2,longitud);
+		mostrar_vectorF(vectorF,longitud);
+		mostrar_vectorF(vectorF2,longitud);
 		if(proporcional(vectorF,vectorF2,longitud)){
-			puts("Son proporcionales");
+			puts("Son proporcionales\n");
 		}else{
-			puts("No son proporcionales");
+			puts("No son proporcionales\n");
 		}
 
 	break;
 
+	case 8:
+
+		/*En este caso, comprobamos si el vector es capicúa*/
+
+		puts("Vamos a ver si es capícua el vector\n");
+		longitud = longitud_vector(TAM);
+		pedir_vectorE(vectorE,longitud);
+		mostrar_vectorE(vectorE,longitud);
+		if(capicua(vectorE,longitud)){
+			puts("Es capicúa\n");
+		}else{
+			puts("No es capicúa\n");
+		}
+
+	break;
+
+	case 9:
+
+		/*En este caso, vamos a copiar un vector, de forma inversa, en otro vector de igual tamaño*/
+
+		puts("Vamos a copiar a la inversa un vector en otro\n");
+		longitud = longitud_vector(TAM);
+		generarE(vectorE,longitud);
+		mostrar_vectorE(vectorE,longitud);
+   inverso(vectorE,vectorE2,longitud);
+   mostrar_vectorE(vectorE2,longitud);
+
+	break;
+
+	case 10:
+
+		/*En este caso, vamos a concatenar dos vectores, con longitud N y M, en otro vector
+		 * con longitud N+M*/
+		puts("Longitud de 1º vector (hasta 30)\n");
+		longitud = longitud_vector(TAM);
+		generarE(vectorE,longitud);
+		mostrar_vectorE(vectorE,longitud);
+		puts("Longitud de 2º vector (hasta 30)\n");
+		longitud2 = longitud_vector(TAM);
+		generarE(vectorE2,longitud2);
+		mostrar_vectorE(vectorE2,longitud2);
+		concatenar(vectorE,vectorE2,vectorDoble,longitud,longitud2);
+		mostrar_vectorE(vectorDoble,longitud+longitud2);
+
+	break;
+
+	case 11:
+
+		puts("Longitud  (hasta 30)\n");
+		longitud = longitud_vector(TAM);
+		generarE(vectorE,longitud);
+		mostrar_vectorE(vectorE,longitud);
+		sleep(3);
+		generarE(vectorE2,longitud);
+		mostrar_vectorE(vectorE2,longitud);
+		sumaVectores(vectorE,vectorE2,longitud);
+
+	break;
+
 	default:
+
+		return 0;
 
 	break;
 

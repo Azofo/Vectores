@@ -39,6 +39,7 @@ void mostrar_vectorE(int vector[], int tam){
 	for(i=0; i < tam ; ++i){
 		printf("%d\t", vector[i]);
 	}
+	puts("");
 }
 
 void pedir_vectorF(float vector[], int tam){
@@ -57,6 +58,7 @@ void mostrar_vectorF(float vector[], int tam){
 	for(i=0; i < tam ; ++i){
 		printf("%.2f\t", vector[i]);
 	}
+	puts("");
 }
 
 float media_vector(int vector[], int tam){
@@ -151,5 +153,41 @@ void generarE(int vector[], int tam){
 	for(i = 0; i<tam;i++){
 		vector[i] = (rand() % 101);
 	}
+}
+
+int capicua(int vector[],int tam){
+	int i;
+	for(i=0;i<tam;i++){
+		if(vector[i]!=vector[tam-i-1]){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+void inverso(int vector[],int vector2[],int tam){
+	int i;
+	for(i=0;i<tam;i++){
+		vector2[tam-i-1]=vector[i];
+	}
+}
+
+void concatenar(int vector[], int vector2[], int vector3[], int tam, int tam2){
+	int i,aux=0;
+	for(i=0;i<tam;i++){
+		vector3[i]=vector[i];
+		aux++;
+	}
+	for(i=0;i<tam2;i++){
+		vector3[aux+i]=vector2[i];
+	}
+}
+
+void sumaVectores(int vector[], int vector2[], int tam){
+	int i;
+	for(i=0;i<tam;i++){
+		printf("%d\t",vector[i]+vector2[i]);
+	}
+	puts("");
 }
 
