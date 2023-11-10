@@ -18,6 +18,7 @@ void mostrar_menor(int vector[],int tam,int lim);
 void mostrar_intervalo_vector(float vector[],int tam, float low, float high);
 void rotar_izq_vector(int vector[],int tam);
 void rotar_der_vector(int vector[],int tam);
+void mostrar_Primero_Vector(int vector[],int tam, int marca);
 
 
 

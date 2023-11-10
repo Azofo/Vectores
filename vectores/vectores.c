@@ -109,4 +109,16 @@ void rotar_der_vector(int vector[],int tam){
 	vector[0]=aux;
 }
 
+void mostrar_Primero_Vector(int vector[],int tam, int marca){
+
+	int i;
+
+	for (i=0;i<tam;i++){
+		if (marca == vector[i]){
+			marca = vector[i+1];
+			printf("%d",vector[i]);
+		}
+	}
+
+}
 
