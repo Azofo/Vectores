@@ -5,12 +5,15 @@
  *      Author: antonio
  */
 #include <stdio.h>
+#include <time.h>
+
 
 int longitud_vector(int tam){
 
 	int num;
 
 	do{
+
 		printf("\nIndica el número de elementos del vector:");
 		fflush(stdout);
 		scanf("%d",&num);
@@ -79,7 +82,7 @@ void mostrar_intervalo_vector(float vector[],int tam, float low, float high){
 	int i;
 	for(i=0;i < tam;i++){
 		if (vector[i]>=low && vector[i]<=high){
-			printf("%f \t",vector[i]);
+			printf("%.2f \t",vector[i]);
 		}
 	}
 }
@@ -120,5 +123,33 @@ void mostrar_Primero_Vector(int vector[],int tam, int marca){
 		}
 	}
 
+}
+
+int proporcional(float vector[], float vector2[], int tam){
+	int i;
+	float aux=0;
+	aux=(vector[0]/vector2[0]);
+	for(i=1;i<tam;i++){
+		if ((vector[i]/vector2[i]) != aux){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+void generarF(float vector[], int tam){
+	int i;
+	srand(time(NULL));
+	for(i = 0; i<tam;i++){
+		vector[i] = (rand() % 8000) / 1000.0f;
+	}
+}
+
+void generarE(int vector[], int tam){
+	int i;
+	srand(time(NULL));
+	for(i = 0; i<tam;i++){
+		vector[i] = (rand() % 101);
+	}
 }
 

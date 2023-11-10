@@ -18,9 +18,11 @@ int main(void) {
 	int longitud,lim,elige,marca;
 	float low,high;
 	int vectorE [TAM];
-	float vectorF [TAM];
+	float vectorF[TAM];
+	float vectorF2 [TAM];
 
 	do{
+
 		printf("\nElige una opción (1-11, 0 para salir)\n");
 
 		do {
@@ -36,7 +38,7 @@ int main(void) {
 
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorE(vectorE,longitud);
+		generarE(vectorE,longitud);
 		mostrar_vectorE(vectorE,longitud);
 
 	break;
@@ -48,7 +50,7 @@ int main(void) {
 
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorE(vectorE,longitud);
+		generarE(vectorE,longitud);
 		puts("Ingresa el valor para mostrar los menores existentes en el vector\n");
 		mostrar_menor(vectorE,longitud,lim); /*Función principal del caso*/
 
@@ -58,9 +60,9 @@ int main(void) {
 
 	/*En este caso, muestra los elementos del vector comprendidos entre el intervalo seleccionado*/
 
-		puts("Rellena un vector con la longitud deseada\n");
+		puts("Rellena un vector de reales con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorF(vectorF,longitud);
+		generarF(vectorF, longitud);
 		puts("Ingresa el límite inferior\n");
 		fflush(stdout);
 		scanf("%f",&low);
@@ -77,7 +79,7 @@ int main(void) {
 
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorE(vectorE,longitud);
+		generarE(vectorE,longitud);
 		puts("Vector original\n");
 		mostrar_vectorE(vectorE,longitud);  /*Vector original*/
 		rotar_izq_vector(vectorE,longitud); /*Función principal del caso*/
@@ -92,7 +94,7 @@ int main(void) {
 
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorE(vectorE,longitud);
+		generarE(vectorF, longitud);
 		puts("Vector original\n");
 		mostrar_vectorE(vectorE,longitud);  /*Vector original*/
 		rotar_der_vector(vectorE,longitud); /*Función principal del caso*/
@@ -108,7 +110,7 @@ int main(void) {
 
 		puts("Rellena un vector con la longitud deseada\n");
 		longitud = longitud_vector(TAM);
-		pedir_vectorE(vectorE,longitud);
+		generarE(vectorE,longitud);
 		puts("Elige el valor \"bandera\" para mostrar los elementos correspondientes\n");
 		fflush(stdout);
 		scanf("%d",&marca);
@@ -118,6 +120,18 @@ int main(void) {
 	break;
 
 	case 7:
+
+		puts("Rellena un vector con la longitud deseada\n");
+		longitud = longitud_vector(TAM);
+		//generarF(vectorF,longitud);
+		//generarF(vectorF2,longitud);
+		pedir_vectorF(vectorF,longitud);
+		pedir_vectorF(vectorF2,longitud);
+		if(proporcional(vectorF,vectorF2,longitud)){
+			puts("Son proporcionales");
+		}else{
+			puts("No son proporcionales");
+		}
 
 	break;
 
