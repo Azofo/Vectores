@@ -26,6 +26,9 @@ void generarF(int vector[], int tam);
 int capicua(int vector[],int tam);
 void inverso(int vector[],int vector2[],int tam);
 void concatenar(int vector[], int vector2[], int vector3[], int tam, int tam2);
+void pedir_vectorC(char vector[], int tam);
+void mostrar_vectorC(char vector[], int tam);
+void calcularDNI(char vector[],int tam);
 
 
 #endif /* VECTORES_H_ */

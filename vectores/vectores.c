@@ -6,6 +6,9 @@
  */
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
+#include <ctype.h>
+
 
 
 int longitud_vector(int tam){
@@ -190,4 +193,46 @@ void sumaVectores(int vector[], int vector2[], int tam){
 	}
 	puts("");
 }
+
+void pedir_vectorC(char vector[], int tam){
+
+		fflush(stdout);
+		scanf("%s", vector);
+}
+
+void mostrar_vectorC(char vector[], int tam){
+
+	int i;
+	for(i=0; i < tam ; ++i){
+		printf("%C", vector[i]);
+	}
+	puts("");
+}
+
+void calcularDNI(char vector[],int tam){
+	char digitoDNI[]="TRWAGMYFPDXBNJZSQVHLCKE";
+	char aux[8];
+	char letra;
+	int i,numero,DNI;
+	for(i=0;i<(tam-1);i++){
+		letra = vector[i];
+		if (isdigit(letra)){
+			aux[i]=vector[i];
+		}else{
+			puts("\nEl DNI es incorrecto\n");
+			break;
+		}
+	}
+	DNI = atoi(aux);
+	numero = DNI%23;
+	if (vector[tam-1] == digitoDNI[numero]){
+		printf("\nNIF correcto: %s. DNI correcto: %d.\n",vector,DNI);
+	}else{\n
+		puts("\nEl DNI es incorrecto\n");
+	}
+
+}
+
+
+
 

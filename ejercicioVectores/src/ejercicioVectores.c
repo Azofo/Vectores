@@ -23,15 +23,16 @@ int main(void) {
 	float vectorF[TAM];
 	float vectorF2 [TAM];
 	int vectorDoble[60];
+	char vectorDNI[9];
 
 	do{
 
-		printf("\nElige una opción (1-11, 0 para salir)\n");
+		printf("\nElige una opción (1-12, 0 para salir)\n");
 
 		do {
 		fflush(stdout);
 		scanf("%d",&elige);
-		}while (elige < 1 || elige > 11);
+		}while (elige < 1 || elige > 12);
 
 	switch(elige){
 
@@ -196,6 +197,17 @@ int main(void) {
 		generarE(vectorE2,longitud);
 		mostrar_vectorE(vectorE2,longitud);
 		sumaVectores(vectorE,vectorE2,longitud);
+
+	break;
+
+	case 12:
+
+		puts("Introduce un DNI (8 numeros y una letra)\n");
+		longitud = 9;
+		pedir_vectorC(vectorDNI,longitud);
+		calcularDNI(vectorDNI,longitud);
+
+
 
 	break;
 
