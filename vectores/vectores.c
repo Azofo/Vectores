@@ -8,6 +8,7 @@
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 
 
@@ -198,6 +199,7 @@ void pedir_vectorC(char vector[], int tam){
 
 		fflush(stdout);
 		scanf("%s", vector);
+		//fgets(vector,tam+1,stdin);
 }
 
 void mostrar_vectorC(char vector[], int tam){
@@ -227,7 +229,7 @@ void calcularDNI(char vector[],int tam){
 	numero = DNI%23;
 	if (vector[tam-1] == digitoDNI[numero]){
 		printf("\nNIF correcto: %s. DNI correcto: %d.\n",vector,DNI);
-	}else{\n
+	}else{
 		puts("\nEl DNI es incorrecto\n");
 	}
 
